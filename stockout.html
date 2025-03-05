@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Out Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3;
+        }
+        .stock-summary {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        .stock-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .stock-table th, .stock-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .stock-table th {
+            background-color: #0056b3;
+            color: white;
+        }
+        .total-value {
+            text-align: right;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Out Summary</h1>
+        
+        <div class="stock-summary">
+            <p><strong>Total Items Sold:</strong> <span id="total-items">0</span></p>
+            <p><strong>Total Sales Value:</strong> $<span id="total-value">0.00</span></p>
+        </div>
+
+        <table class="stock-table">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity Sold</th>
+                    <th>Price per Item ($)</th>
+                    <th>Total Value ($)</th>
+                </tr>
+            </thead>
+            <tbody id="stock-rows">
+                <!-- Sample row -->
+                <tr>
+                    <td>Sample Item</td>
+                    <td>2</td>
+                    <td>15.00</td>
+                    <td>30.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

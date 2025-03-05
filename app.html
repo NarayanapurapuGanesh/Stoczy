@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <h1>Welcome to Shop Inventory</h1>
+        <img src="logo.png" alt="Shop Logo" style="border-radius: 50px; height: 300px; width: 300px;">
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+        <!-- Top Navbar -->
+        <nav id="top-nav">
+            <button onclick="openLogin()">Login</button>
+            <button>
+                <a href="stockin.html">
+                    <img src="plus.png" height="25px" width="25px">
+                </a></button>
+            <span onclick="openSettings()">
+                <button>
+                    Average Sale value
+                </button></span>
+            <span>
+                <button>
+                    <a href="profile.html">
+                        <img src="p.png" alt="profile" width="25px" height="25px">
+                    </a>
+                </button>
+            </span>
+        </nav>
+
+        <!-- Home Page -->
+        <div id="home">
+            <h2>Expiring Soon - Special Offers</h2>
+            <ul id="expiring-items">
+                <!-- Expiring items will be dynamically added here -->
+                <button><a href="_black"><img src="out.png"></a>
+                </button>
+                
+                 <br>
+                 <br>
+                 <button style="padding: 10px;">
+                    <a href="_blank"><img src="S-back.png"></a></button>
+                 <br>
+                 <br>
+                 <button> <a href="_blank"> <img src="s-alarm.png" height="500px" width="900px"></a> </button>
+            </ul>
+        </div>
+
+        <!-- Bottom Navbar -->
+        <nav id="bottom-nav">
+            <button>
+                <a href="app.html">Home</a></button>
+            <button id="stock-in">
+                <a href="stockin.html">
+                    Stock-In
+                </a>
+            </button>
+            <button id="stock-out">
+                <a href="stockout.html">
+                    StockOut
+                </a>
+            </button>
+            <button>
+                <a href="profile.html">
+                    Menu
+                </a>    
+            </button>
+        </nav>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLogin()">&times;</span>
+            <h2>Login</h2>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button>Submit</button>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSettings()">&times;</span>
+            <h2>Settings</h2>
+            <p>Settings options go here...</p>
+        </div>
+    </div>
+
+    <script>
+        // Splash Screen Timeout
+        setTimeout(() => {
+            document.getElementById('splash-screen').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        }, 3000);
+
+        function openLogin() {
+            document.getElementById('login-modal').style.display = 'block';
+        }
+
+        function closeLogin() {
+            document.getElementById('login-modal').style.display = 'none';
+        }
+
+        function openSettings() {
+            document.getElementById('settings-modal').style.display = 'block';
+        }
+
+        function closeSettings() {
+            document.getElementById('settings-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

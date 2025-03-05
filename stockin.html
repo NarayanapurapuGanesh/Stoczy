@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #stockCount {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Stock In</h2>
+        <form id="stockInForm">
+            <label for="barcode">Scan Barcode (Upload Image):</label>
+            <input type="file" id="barcode" name="barcode" accept="image/*">
+
+            <label for="productCode">Enter Product Code:</label>
+            <input type="text" id="productCode" name="productCode" placeholder="Enter product code...">
+
+            <button type="submit">Add to Stock</button>
+        </form>
+
+        <p id="stockCount">Items added to stock: 0</p>
+    </div>
+
+    <script>
+        let stockCount = 0;
+
+        document.getElementById('stockInForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const barcode = document.getElementById('barcode').files[0];
+            const productCode = document.getElementById('productCode').value.trim();
+
+            if (barcode || productCode) {
+                stockCount++;
+                document.getElementById('stockCount').textContent = `Items added to stock: ${stockCount}`;
+                document.getElementById('stockInForm').reset();
+            } else {
+                alert('Please upload a barcode image or enter a product code.');
+            }
+        });
+    </script>
+</body>
+</html>
